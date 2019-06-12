@@ -1,0 +1,17 @@
+
+<div class="row">
+  <div class="col s12">
+      {{plato.nombre}}
+  </div>
+  <div class="col s12">
+      {{plato.precio | currency:'S./ '}}
+  </div>
+  <div class="col s12">
+    <img src="{{plato.urlImagen}}">
+
+      
+  </div>
+  <div class="col s12">
+    <div class="btn" (click)="editarPlato()">Editar</div>
+  </div>
+</div>

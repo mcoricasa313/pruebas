@@ -1,0 +1,30 @@
+<mat-sidenav-container class="sidenav-container" >
+  <mat-sidenav #drawer class="sidenav" fixedInViewport style="background-color: #3f51b5"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar></mat-toolbar>
+    <mat-nav-list>
+      <a style="color: white" mat-list-item href="#">Platos</a>
+      <a style="color: white" mat-list-item href="#">Pedido</a>
+      <a style="color: white" mat-list-item href="#">Consultas</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>mesero-app</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
